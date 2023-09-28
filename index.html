@@ -12,15 +12,17 @@
     <div class="flex-container">
         <div class="title"><h1>ETCH-A-SKETCH</h1></div>
         <div id="content">
-            <div id="drawing-board"></div>
+            <div id="board"></div>
             <div class="buttons">
                 <button onclick="changeColor('black')">Black</button>
                 <button onclick="changeColor('white')">Eraser</button>
-                <button onclick="changeColor('random')">Reset</button>
+                <button onclick="changeColor('gray')">Gray</button>
+                <button onclick="changeColor('random')">Random</button>
+                <button>Rest</button>
             </div>
             <div class="input-container">
-                <input type="text" placeholder="Set Pixels" value="16" onchange="changeSize(this.value)">
-                <button>Set Size</button>
+                <input id="input" type="text" placeholder="Set Pixels" value="16" onchange="changeSize(this.value)">
+                <button id="input-button">Set Size</button>
             </div>
         </div>
     </div>
