@@ -12,6 +12,14 @@ function getSize(input) {
         return penSize = input;
     } else {
         alert("Input not accepted, please try again!")
-    }
-}
+    };
+};
 
+function createGrid(rows, cols) {
+    drawingArea.style.setProperty('--grid-rows', rows);
+    drawingArea.style.setProperty('--grid-cols', cols);
+    for (i = 0; i <= (rows * cols); i++) {
+        let cell = document.createElement('div');
+        drawingArea.appendChild(cell).className = 'grid-item';
+    };
+};
