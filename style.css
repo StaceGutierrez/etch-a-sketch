@@ -1,5 +1,17 @@
-#drawing-board {
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+
+#board {
     width: 500px;
     height: 500px;
     display: grid;
+    border: 1px solid lightgray;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+
+.grid-item {
+    text-align: center;
 }
