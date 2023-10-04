@@ -30,3 +30,13 @@ function createGrid(input) {
     
    };
 }
+
+createGrid(16)
+
+function getSize(input) {
+    if (input >= 2 && input <=100) {
+        createGrid(input)
+    } else {
+        alert("Input not accepted, please try again")
+    }
+}
