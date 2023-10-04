@@ -3,8 +3,7 @@ const setBtn = document.getElementById('input-button');
 
 setBtn.addEventListener('click', () => {
     const inputVal = input.value;
-    console.log(inputVal);
-
+    createGrid(inputVal);
 })
 
 function getSize(input) {
@@ -15,11 +14,19 @@ function getSize(input) {
     };
 };
 
-function createGrid(rows, cols) {
-    drawingArea.style.setProperty('--grid-rows', rows);
-    drawingArea.style.setProperty('--grid-cols', cols);
-    for (i = 0; i <= (rows * cols); i++) {
-        let cell = document.createElement('div');
-        drawingArea.appendChild(cell).className = 'grid-item';
-    };
-};
+function createGrid(input) {
+    let drawingArea = document.querySelector('#board')
+    let blocks = drawingArea.querySelectorAll('div')
+    blocks.forEach((div) => div.remove());
+    drawingArea.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
+    drawingArea.style.gridTemplateRows = `repeat(${input}, 1fr)`;
+
+    for (i = 0; i <= (input * input); i++) {
+        let block = document.createElement('div');
+        block.className = 'grid-item';
+        drawingArea.style.backgroundColor = "white";
+        block.addEventListener("mouseover", getColor);
+        drawingArea.insertAdjacentElement('beforeend', block);
+    
+   };
+}
