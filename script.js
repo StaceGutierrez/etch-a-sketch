@@ -40,3 +40,17 @@ function getSize(input) {
         alert("Input not accepted, please try again")
     }
 }
+
+function getColor() {
+    color === "random" ? this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)` : this.style.backgroundColor = color;
+}
+
+function altColor(pick) {
+    color = pick;
+}
+
+function resetBoard() {
+    let drawingArea = document.querySelector('#board');
+    let block = drawingArea.querySelectorAll('div');
+    block.forEach((div) => (div.style.backgroundColor = "white"))
+}
